@@ -1,0 +1,32 @@
+using CoreServices.Dtos.Invoice;
+using CoreServices.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Api.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class InvoiceController : ControllerBase
+    {
+        private readonly IInvoiceService _service;
+
+        public InvoiceController(IInvoiceService service)
+        {
+            _service = service;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create([FromBody] CreateInvoiceDto request)
+        {
+            var result = await _service.CreateInvoice(request);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            var result = await _service.GetAllInvoices();
+            return Ok(result);
+        }
+    }
+}

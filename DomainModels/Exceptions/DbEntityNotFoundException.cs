@@ -3,16 +3,21 @@ using System.Net;
 
 namespace DomainModels.Exceptions
 {
-    public class DbEntityNotFoundException<T> : Exception 
-        where T : Entity
+    public class DbEntityNotFoundException : Exception 
     {
-        public HttpStatusCode StatusCode = HttpStatusCode.NotFound;
+        public string customMessage { get; set; }
 
-        public string Message { get; set; }
-
-        public DbEntityNotFoundException(int id)
+        public DbEntityNotFoundException(string message)
         {
-            Message = $"{typeof(T).Name} entry {id} not found";
+            customMessage = message;
+        }
+
+        public override string Message
+        {
+            get
+            {
+                return customMessage;
+            }
         }
     }
 }

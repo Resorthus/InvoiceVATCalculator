@@ -41,7 +41,7 @@ namespace OutsideInfrastructure.Repositories
 
             if (entity is null)
             {
-                throw new DbEntityNotFoundException<T>(id);
+                throw new DbEntityNotFoundException($"{typeof(T).Name} entry {id} not found");
             }
 
             return entity;

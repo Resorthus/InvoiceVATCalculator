@@ -9,6 +9,7 @@ namespace DomainModels.Entities
 {
     public class Supplier : TransactionParticipant
     {
+        
         public Supplier() : base() 
         {
             Type = PersonType.Juridical;

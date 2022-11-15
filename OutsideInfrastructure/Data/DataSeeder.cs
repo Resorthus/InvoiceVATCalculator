@@ -68,11 +68,11 @@ namespace OutsideInfrastructure.Data
             }
 
             context.Suppliers.Add(new Supplier { Name = "UAB Inmedica", IsVATApplicable = true, Country = countries[0] });
-            context.Suppliers.Add(new Supplier { Name = "UAB Starbucks", IsVATApplicable = false, Country = countries[1] });
-            context.Suppliers.Add(new Supplier { Name = "UAB MCDonalds", IsVATApplicable = true, Country = countries[2] });
+            context.Suppliers.Add(new Supplier { Name = "UAB Starbucks", IsVATApplicable = true, Country = countries[1] });
+            context.Suppliers.Add(new Supplier { Name = "UAB MCDonalds", IsVATApplicable = false, Country = countries[2] });
             context.Suppliers.Add(new Supplier { Name = "UAB Hesburger", IsVATApplicable = false, Country = countries[3] });
             context.Suppliers.Add(new Supplier { Name = "UAB Forum Cinemas", IsVATApplicable = true, Country = countries[4] });
-            context.Suppliers.Add(new Supplier { Name = "UAB Mega", IsVATApplicable = false, Country = countries[5] });
+            context.Suppliers.Add(new Supplier { Name = "UAB Mega", IsVATApplicable = true, Country = countries[5] });
 
             await context.SaveChangesAsync();
         }

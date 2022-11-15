@@ -14,13 +14,16 @@ namespace OutsideInfrastructure
 {
     public static class OutsideInfrastructureInjection
     {
-        public static async Task AddOutsideInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static void AddOutsideInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("Database")));
+            services.AddDbContext<DatabaseContext>(options =>
+            {
+                options.UseLazyLoadingProxies();
+                options.UseSqlServer(configuration.GetConnectionString("Database"));
+            });
 
             services.AddScoped(typeof(IRepository), typeof(Repository));
 
-            await services.BuildServiceProvider().SeedData();
         }
     }
 }

@@ -12,11 +12,11 @@ namespace DomainModels.Entities
 
         public int ClientId { get; set; }
 
-        public TransactionParticipant Client { get; set; }
+        public virtual TransactionParticipant Client { get; set; }
 
         public int SupplierId { get; set; }
 
-        public TransactionParticipant Supplier { get; set; }
+        public virtual TransactionParticipant Supplier { get; set; }
 
         public double InitialPrice { get; set; }
 
