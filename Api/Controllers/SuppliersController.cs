@@ -7,11 +7,11 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class SupplierController : ControllerBase
+    public class SuppliersController : ControllerBase
     {
         private readonly ITransactionParticipantService _service;
 
-        public SupplierController(ITransactionParticipantService service)
+        public SuppliersController(ITransactionParticipantService service)
         {
             _service = service;
         }

@@ -17,8 +17,7 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddOutsideInfrastructure(builder.Configuration);
-await builder.Services.BuildServiceProvider().SeedData();
+await builder.Services.AddOutsideInfrastructure(builder.Configuration);
 builder.Services.AddCoreServices(builder.Configuration);
 
 var app = builder.Build();

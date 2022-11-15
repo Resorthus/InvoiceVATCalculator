@@ -9,11 +9,11 @@ namespace Api.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    public class ClientController : ControllerBase
+    public class ClientsController : ControllerBase
     {
         private readonly ITransactionParticipantService _service;
 
-        public ClientController(ITransactionParticipantService service)
+        public ClientsController(ITransactionParticipantService service)
         {
             _service = service;
         }

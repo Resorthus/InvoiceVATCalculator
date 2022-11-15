@@ -10,7 +10,7 @@ namespace CoreServices.Dtos.Supplier
 {
     public class CreateSupplierDto
     {
-        [Required(ErrorMessage = "Client name cannot be empty")]
+        [Required(ErrorMessage = "Supplier name cannot be empty")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "VAT applicability status cannot be empty")]

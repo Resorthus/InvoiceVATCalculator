@@ -7,11 +7,11 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CountryController : ControllerBase
+    public class CountriesController : ControllerBase
     {
         private readonly ICountryService _service;
 
-        public CountryController(ICountryService service)
+        public CountriesController(ICountryService service)
         {
             _service = service;
         }

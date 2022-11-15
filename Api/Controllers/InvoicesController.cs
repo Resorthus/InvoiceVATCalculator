@@ -6,11 +6,11 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class InvoiceController : ControllerBase
+    public class InvoicesController : ControllerBase
     {
         private readonly IInvoiceService _service;
 
-        public InvoiceController(IInvoiceService service)
+        public InvoicesController(IInvoiceService service)
         {
             _service = service;
         }

@@ -12,6 +12,8 @@ namespace OutsideInfrastructure.Data
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
+        public DatabaseContext() : base() { }
+
         public DbSet<Supplier> Suppliers { get; set; }
 
         public DbSet<Client> Clients { get; set; }

@@ -14,7 +14,7 @@ namespace OutsideInfrastructure
 {
     public static class OutsideInfrastructureInjection
     {
-        public static void AddOutsideInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static async Task AddOutsideInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DatabaseContext>(options =>
             {
@@ -22,8 +22,9 @@ namespace OutsideInfrastructure
                 options.UseSqlServer(configuration.GetConnectionString("Database"));
             });
 
-            services.AddScoped(typeof(IRepository), typeof(Repository));
+            services.AddTransient(typeof(IRepository), typeof(Repository));
 
+            await services.BuildServiceProvider().SeedData();
         }
     }
 }
